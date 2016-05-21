@@ -13,4 +13,4 @@ IBM Bluemixを使えば簡単に、そして迅速にアプリケーションを
 ノード解説
 #### Alchemy Image Analysis node
 
-[Alchemy Image Analysis](../images/Node-RED___mz-nodered-z002_eu-gb_mybluemix_net.png)
+[Alchemy Image Analysis](/images/Node-RED___mz-nodered-z002_eu-gb_mybluemix_net.png)
