@@ -41,6 +41,8 @@ AlchemyAPIはRESTのGETメソッドでアクセスして画像を解析します
 まずは左側のパレットのInputカテゴリ内のhttpのnode<img src="images/httpinput-node.png" width="120px">をドラッグ&ドロップし、キャンバス内に配置します。
 プロパティー内のURL欄にアクセスポイントを記載します。ここでは/callwatson　とでもしておきます。
 ![httpinput-property](images/htttpinput-property.png)
+
+
 Nameの欄はノードの名前をわかりやすいようにしておくために記述しておきます。任意ですが、ここではHTTP Inputにしておきます。
 
 ### 2-2.switch node
@@ -52,10 +54,12 @@ Propertyは以下の通りにimagurl属性に含まれるペイロードのnull�
 nullであれば、"1"にそれ以外であれば"2"に値が渡されます。![swich-property](images/switch-property.png)
 
 
-### 2-3 template node
+### 2-3 template node (初期画面)
 
 画面のHTMLを表示したり、Inputとなる画像を送信するためのメニューを提供するためにHTMLを記述します。
 temlpalteノード![template-node](images/template-node.png)をフローエディタ中央のキャンバスにドラッグ&ドロップします。  
+プロパティを以下のように記述します。
+
 
 ```
 <h1>Welcome to the Alchemy Vision Face Detection Demo on Node-RED</h1>
@@ -74,5 +78,49 @@ temlpalteノード![template-node](images/template-node.png)をフローエデ�
 ### 2-4.change node
 
 入力画面から画像URLを抽出するchangeノードを定義します。左側のリソースパレットのfunctionカテゴリ内のchangeノード
-![change-property](images/switch-node.png)をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
+![change-node](images/switch-node.png)をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
 ここからpayload属性をimageurl属性に変換します。以下の通りにプロパティを設定します。
+![changenode-property](images/changenode-property.png)
+
+
+### 2-5.Image Analysis
+
+画像解析のためのImage Analysisノードを定義します。左側のリソースパレットのWatsonカテゴリ内のImage Analysisノード![imageanalysis](images/Node-RED___mz-nodered-z002_eu-gb_mybluemix_net.png) をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
+プロパティーでは顔認識を行うため、以下の通りにDetectをFaceに設定します。
+![imageanalysis-property](images/imageanalysis-property.png)
+
+
+### 2-6. template node (結果)
+
+WatsonのImage Analysisから返ってきた結果を表示させるためのHTMLを記載します。temlpalteノード![template-node](images/template-node.png)をフローエディタ中央のキャンバスにドラッグ&ドロップします。  
+プロパティを以下のように記述します。
+
+
+```
+<h1>Alchemy Image Analysis</h1>
+    <p>Analyzed image: {{payload}}<br/><img id="alchemy_image" src="{{payload}}" height="50"/></p>
+    {{^result}}
+        <P>No Face detected</P>
+    {{/result}}
+    <table border='1'>
+        <thead><tr><th>Age Range</th><th>Score</th><th>Gender</th><th>Score</th><th>Name</th></tr></thead>
+        {{#result}}<tr>
+            <td><b>{{age.ageRange}}</b></td><td><i>{{age.score}}</i></td>
+            <td>{{gender.gender}}</td><td>{{gender.score}}</td>
+            {{#identity}}<td>{{identity.name}} ({{identity.score}})</td>{{/identity}}
+        </tr>{{/result}}
+    </table>
+    <form  action="{{req._parsedUrl.pathname}}">
+        <input type="submit" value="Try again"/>
+    </form>
+```
+
+![templateoutput-property](images/templateoutput-property.png)
+
+
+### 2-7.フローをつなげる
+
+出来上がった客ノードをつなげて、右上のDepoyをクリックすれば完成です!エラーが出ていないことを確認してください。
+![deploy](images/deploy.png)
+
+## 3.動作確認
