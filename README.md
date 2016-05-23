@@ -1,4 +1,4 @@
-## Alchemy APIををBluemixのNode-REDから呼び出そう!
+## Alchemy APIをBluemixのNode-REDから呼び出そう!
 ***
 ### 概要
 
@@ -26,10 +26,9 @@ IBMがBluemixは様々なコグニティブAPIを提供しています。その�
 ***
 ## 1.BluemixでNode-REDサービス、WatsonのAPIを設定する
 
-### 1-1.Node-REDの準備
+### 1-1.Node-RED/Watson APIの準備
+[こちら](https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjH0Pip8e_MAhVEspQKHWpHBz8QFggiMAE&url=https%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcommunity%2Fwikis%2Fform%2Fanonymous%2Fapi%2Fwiki%2F38ad3157-38ad-4dd5-b425-7782f6a59546%2Fpage%2Faa73023a-2764-48d6-b52f-fb31c738ed62%2Fattachment%2F9f00ffaa-114f-40d4-9be7-3f7407510a00%2Fmedia%2FBluemix%25E5%258B%2589%25E5%25BC%25B7%25E4%25BC%259A%2520-%2520%25E3%2581%25AF%25E3%2581%2598%25E3%2582%2581%25E3%2581%25A6%25E3%2581%25AENode-RED.pdf&usg=AFQjCNE_joQ8yJlPQWKQc57iFzRzy15FUw&sig2=Mwh4ItmlL1MDGYs5gBqpKw&bvm=bv.122448493,d.dGo)のp.38までを参考にHello WorldをNode-REDで
 
-
-### 1-2.Watson APIの準備
 ***
 
 
