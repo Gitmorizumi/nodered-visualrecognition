@@ -77,7 +77,7 @@ temlpalteノード![template-node](images/template-node.png)をフローエデ�
 ### 2-4.change node
 
 入力画面から画像URLを抽出するchangeノードを定義します。左側のリソースパレットのfunctionカテゴリ内のchangeノード
-![change-node](images/switch-node.png)をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
+![change-node](images/change-node.png)をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
 ここからpayload属性をimageurl属性に変換します。以下の通りにプロパティを設定します。
 ![changenode-property](images/changenode-property.png)
 
