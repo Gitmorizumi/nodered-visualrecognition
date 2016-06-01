@@ -27,7 +27,7 @@ IBMがBluemixは様々なコグニティブAPIを提供しています。その�
 ## 1.BluemixでNode-REDサービス、WatsonのAPIを設定する
 
 ### 1-1.Node-RED/Watson APIの準備
-[こちら](https://www.ibm.com/developerworks/community/wikis/home?lang=ja#!/wiki/Wdec01e50fbfa_493c_8a88_6dd85c4d983f/page/%E5%AD%A6%E7%BF%92%E7%94%A8%E6%95%99%E6%9D%90)のp.38までを参考にHello WorldをNode-REDで
+[こちら](https://www.ibm.com/developerworks/community/wikis/home?lang=ja#!/wiki/Wdec01e50fbfa_493c_8a88_6dd85c4d983f/page/%E5%AD%A6%E7%BF%92%E7%94%A8%E6%95%99%E6%9D%90)を参考にHello WorldをNode-REDで実施します。
 
 ***
 
