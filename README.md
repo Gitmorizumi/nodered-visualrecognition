@@ -126,4 +126,5 @@ WatsonのImage Analysisから返ってきた結果を表示させるためのHTM
 ブラウザのURL欄にhttp://xxxx.mybluemix.net/callwatson をインプットして呼び出してみましょう。
 Image URLの入力欄にWatsonに読ませたい画像URLを入れてみてください。
 
-顔の認識や人物名が出てきます！さすがWatson！ 
+顔の認識や人物名が出てきます！さすがWatson！
+![guts](images/guts.png)
