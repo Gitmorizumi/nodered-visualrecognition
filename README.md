@@ -30,11 +30,30 @@ IBMがBluemixは様々なコグニティブAPIを提供しています。その�
 [こちら](https://www.ibm.com/developerworks/community/wikis/home?lang=ja#!/wiki/Wdec01e50fbfa_493c_8a88_6dd85c4d983f/page/%E5%AD%A6%E7%BF%92%E7%94%A8%E6%95%99%E6%9D%90)を参考にHello WorldをNode-REDで実施します。
 
 ***
+## 2.AlchemyAPIを追加する
+さて、Node-REDのノードに画像認識のためのImage Analysisがあるのですが、このままでは使えません。
+このNode-REDのアプリケーションにAlchemyAPIを追加してあげる必要があります。
+
+### 2-1. AlchemyAPI
+Bluemixのメニュー画面からダッシュボードをクリックし、先ほどのNode-REDのアプリケーションをクリックしてください。
+![dashboard](images/dashboard.png)
 
 
-## 2.Node-REDでプログラミング
 
-### 2-1.HTTP Input node
+続いて、サービスのまたはAPIの追加をクリックしてください。
+![serviceapi](images/serviceapi.png)
+
+次の画面で現れるAPIの一覧からAlchemyAPIをクリックすればOKです!
+![alcheyclick](images/alchemyclick.png)
+
+その後、再ステージング（再起動）のポップアップ画面が表示されるので、再ステージングし正常に再起動すればOKです！
+
+
+
+
+## 3.Node-REDでプログラミング
+
+### 3-1.HTTP Input node
 
 AlchemyAPIはRESTのGETメソッドでアクセスして画像を解析します。  
 まずは左側のパレットのInputカテゴリ内のhttpのnode<img src="images/httpinput-node.png" width="120px">をドラッグ&ドロップし、キャンバス内に配置します。
@@ -44,7 +63,7 @@ AlchemyAPIはRESTのGETメソッドでアクセスして画像を解析します
 
 Nameの欄はノードの名前をわかりやすいようにしておくために記述しておきます。任意ですが、ここではHTTP Inputにしておきます。
 
-### 2-2.switch node
+### 3-2.switch node
 
 画像のURLをチェックするノードを準備します。
 左側のリソースパレットのfunctionカテゴリ内のswitchノード![switch-node](images/switch-node.png)をフローエディタ中央のキャンバスにドラッグ&ドロップします。  
@@ -53,7 +72,7 @@ Propertyは以下の通りにimagurl属性に含まれるペイロードのnull�
 nullであれば、"1"にそれ以外であれば"2"に値が渡されます。![swich-property](images/switch-property.png)
 
 
-### 2-3 template node (初期画面)
+### 3-3 template node (初期画面)
 
 画面のHTMLを表示したり、Inputとなる画像を送信するためのメニューを提供するためにHTMLを記述します。
 temlpalteノード![template-node](images/template-node.png)をフローエディタ中央のキャンバスにドラッグ&ドロップします。  
@@ -74,7 +93,7 @@ temlpalteノード![template-node](images/template-node.png)をフローエデ�
 ```
 
 
-### 2-4.change node
+### 3-4.change node
 
 入力画面から画像URLを抽出するchangeノードを定義します。左側のリソースパレットのfunctionカテゴリ内のchangeノード
 ![change-node](images/change-node.png)をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
@@ -82,14 +101,14 @@ temlpalteノード![template-node](images/template-node.png)をフローエデ�
 ![changenode-property](images/changenode-property.png)
 
 
-### 2-5.Image Analysis
+### 3-5.Image Analysis
 
 画像解析のためのImage Analysisノードを定義します。左側のリソースパレットのWatsonカテゴリ内のImage Analysisノード![imageanalysis](images/Node-RED___mz-nodered-z002_eu-gb_mybluemix_net.png) をフロー・エディタ中央のキャンバスにドラッグ&ドロップします。
 プロパティーでは顔認識を行うため、以下の通りにDetectをFaceに設定します。
 ![imageanalysis-property](images/imageanalysis-property.png)
 
 
-### 2-6. template node (結果)
+### 3-6. template node (結果)
 
 WatsonのImage Analysisから返ってきた結果を表示させるためのHTMLを記載します。temlpalteノード![template-node](images/template-node.png)をフローエディタ中央のキャンバスにドラッグ&ドロップします。  
 プロパティを以下のように記述します。
@@ -117,12 +136,12 @@ WatsonのImage Analysisから返ってきた結果を表示させるためのHTM
 ![templateoutput-property](images/templateoutput-property.png)
 
 
-### 2-7.フローをつなげる
+### 3-7.フローをつなげる
 
 出来上がった客ノードをつなげて、右上のDepoyをクリックすれば完成です!エラーが出ていないことを確認してください。
 ![deploy](images/deploy.png)
 
-## 3.動作確認
+## 4.動作確認
 ブラウザのURL欄にhttp://xxxx.mybluemix.net/callwatson をインプットして呼び出してみましょう。
 Image URLの入力欄にWatsonに読ませたい画像URLを入れてみてください。
 
