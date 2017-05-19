@@ -13,21 +13,24 @@ IBM Bluemixを使えば簡単に、そして迅速にアプリケーションを
 ノード解説
 #### Watson Visual Recognition
 
-IBMがBluemixは様々なコグニティブAPIを提供しています。その中でもVisual Recognitionの画像認識サービスであるImage Analysis<img src="images/visual-recognition-node.png" width="75px">は画像解析から年齢や人物判定まで行う機能を持ったサービスです。IBM Watsonのカテゴリに入っているので確認してみてください。
+IBMがBluemixは様々なコグニティブAPIを提供しています。その中でもVisual Recognition<img src="images/visual-recognition-node.png" width="90px">は画像解析から年齢や人物判定まで行う機能を持ったサービスです。IBM Watsonのサービスなので確認してみてください。
 
 ***
 ### 全体フロー概要
 
-画像のURL（例："http://xxxxx.jpg" ）をImage AnalysisのAPIにかけると画像解析を行い、顔認識の結果を返してくれるサンプルアプリです。
+画像のURL（例："http://xxxxx.jpg" ）をVisual RecognitionのAPIにかけると画像解析を行い、顔認識の結果を返してくれるサンプルアプリです。
 
-![Nodeの全体像](images/Node-RED_Image_Analysis_all.png)
+![Nodeの全体像](images/vr-overallnode.png)
 
 
 ***
 ## 1.BluemixでNode-REDサービス、WatsonのAPIを設定する
 
 ### 1-1.Node-RED/Watson APIの準備
-[こちら](https://www.ibm.com/developerworks/community/wikis/home?lang=ja#!/wiki/Wdec01e50fbfa_493c_8a88_6dd85c4d983f/page/%E5%AD%A6%E7%BF%92%E7%94%A8%E6%95%99%E6%9D%90)を参考にHello WorldをNode-REDで実施します。
+まず、Node-REDのサービスを立ち上げます。
+
+カタログをクリック。
+![node-red_1]node-red_1.png
 
 ***
 ## 2.AlchemyAPIを追加する
