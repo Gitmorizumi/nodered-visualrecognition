@@ -1,4 +1,4 @@
-## Alchemy APIをBluemixのNode-REDから呼び出そう!
+## Alchemy APIをBluemixのNode-REDから呼び出そう!(V3)
 ***
 ### 概要
 
@@ -11,9 +11,9 @@ IBM Bluemixを使えば簡単に、そして迅速にアプリケーションを
 
 ***
 ノード解説
-#### Alchemy Image Analysis node
+#### Watson Visual Recognition
 
-IBMがBluemixは様々なコグニティブAPIを提供しています。その中でもAlchemyの画像認識サービスであるImage Analysis<img src="images/Node-RED___mz-nodered-z002_eu-gb_mybluemix_net.png" width="70px">は画像解析から年齢や人物判定まで行う機能を持ったサービスです。IBM Watsonのカテゴリに入っているので確認してみてください。
+IBMがBluemixは様々なコグニティブAPIを提供しています。その中でもVisual Recognitionの画像認識サービスであるImage Analysis<img src="images/visual-recognition-node.png" width="75px">は画像解析から年齢や人物判定まで行う機能を持ったサービスです。IBM Watsonのカテゴリに入っているので確認してみてください。
 
 ***
 ### 全体フロー概要
