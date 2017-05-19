@@ -2,7 +2,7 @@
 ***
 ### 概要
 
-IBM Watsonのサービスの一つであるAlchemy APIを呼びだす簡単なサンプルです。
+IBM Watsonのサービスの一つである画像認識APIを呼びだす簡単なサンプルです。
 
 Node-REDを使って簡単に呼び出しているのが特徴です。   
 IBM Bluemixを使えば簡単に、そして迅速にアプリケーションを作ることが可能です。  
@@ -90,7 +90,7 @@ Bluemixのダッシュボードの"概要"メニューをクリックすると�
 
 ### 3-1.HTTP Input node
 
-AlchemyAPIはRESTのGETメソッドでアクセスして画像を解析します。  
+Visual RecognitionはRESTのGETメソッドでアクセスして画像を解析します。  
 まずは左側のパレットのInputカテゴリ内のhttpのnode<img src="images/httpinput-node.png" width="120px">をドラッグ&ドロップし、キャンバス内に配置します。
 プロパティー内のURL欄にアクセスポイントを記載します。ここでは/callwatson　とでもしておきます。
 ![httpinput-property](images/htttpinput-property.png)
